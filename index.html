@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="signin-popup">
+        <div class="signin-content">
+            <span class="close-btn" onclick="closeSignInPopup()">&times;</span>
+            <h2 class="signinsatauri">Sign In</h2>
+            <p class="stay">Sign in to stay connected.</p>
+            <form action="#" method="post" id="signin-form" onsubmit="return validateSignInForm(event)">
+                <label class="emailla" for="Email">Email:</label>
+                <input type="email" id="email" name="Email" class="email" required>
+    
+                <label class="passwordla" for="password">Password:</label>
+                <input type="password" id="password" name="password" class="password" required>
+    
+                <button class="signinbtn" type="submit" onclick="validateSignInForm(event)">Sign In</button>
+            </form>
+            <a href="#" class="forgotpa" onclick="openForgotPasswordPopup()">Forgot Password?</a>
+    
+            <p class="donthave">Don't have an account? Click here to <a class="signupd" href="#">sign up</a></p>
+        </div>
+    </div>
+    <div id="signup-popup">
+        <div class="signup-content">
+            <span class="closebtn" onclick="closeSignUpPopup()">&times;</span>
+            <h2 class="signupsatauri">Sign Up</h2>
+            <p class="create">Create your account</p>
+            <form action="#" method="post" id="signup-form" onsubmit="return validateSignUpForm(event)">
+                <label class="fullnamela" for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="FullName" class="fullname" required>
+    
+                <label class="emailla1" for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="Email" class="email1" required>
+    
+                <label class="phonela" for="phoneNumber">Phone Number:</label>
+                <input type="text" id="phoneNumber" name="PhoneNumber" class="phonenumber" required>
+    
+                <label class="passwordla1" for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" class="password1" required>
+                <div class="agree">
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                    <label class="agreeTerms" for="agreeTerms">I agree with the terms of use</label>
+                </div>
+                <button class="signupbtn" type="submit" onclick="return validateSignUpForm()">Sign Up</button>
+
+            </form>
+    
+            <p class="already">Already have an account? <a class="signin-link" href="#" onclick="openSignInPopup()">Sign in here</a></p>
+        </div>
+    </div>
+    <div id="forgot-password-popup" class="password-popup">
+        <div class="password-popup-container"> 
+            <div class="password-content">
+                <span class="close-btnpa" onclick="closeForgotPasswordPopup()">&times;</span>
+                <h2 class="password-title">Forgot Password</h2>
+                <p class="password-instructions">Enter your email address to reset your password.</p>
+                <form action="#" method="post" id="forgot-password-form" onsubmit="return sendResetLink()">
+                    <label class="emailpala" for="reset-email">Email:</label>
+                    <input class="emailpa" type="email" id="reset-email" name="resetEmail" required>
+                <button class="reset-btn" type="submit">Reset Password</button>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div id="success-popup" class="success-popup">
+        <div class="success-content">
+            <div class="suc-img"></div>
+            <h2 class="success-title">Success!</h2>
+            <p class="success-message">The link has been sent to your email, <br>please check the email and follow the further instructions.</p>
+            <button class="back-to-home-btn" onclick="backToHome()">Back to Home</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
